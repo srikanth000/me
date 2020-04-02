@@ -9,3 +9,5 @@
 # production
 /build
 
+.vscode
+package-lock.json
