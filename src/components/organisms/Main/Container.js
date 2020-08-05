@@ -1,11 +1,35 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Flex } from 'rebass';
+import React, {useState} from 'react';
+import styled, {keyframes} from 'styled-components';
+import { Flex, Box } from 'rebass';
+import About from '../About';
+
+
+
+const fromLeft = keyframes`
+  0% {left: -50px;}
+  100% {left: 0px;} 
+  
+`
+
+const fromRight = keyframes`
+  0% {right: -50px;}
+  100% {right: 0px;} 
+`
+
+const Body = styled(Box)`
+	position: relative;
+	-webkit-animation: ${props => props.direction == 'l' ? fromLeft : fromRight} .5s 1;
+  animation: ${props => props.direction == 'l' ? fromLeft : fromRight} .5s 1;
+  animation-direction: alternate;
+  -webkit-animation-direction: alternate; 
+`
 
 const Container = () => {
+
   return (
-    <Flex>
-    </Flex>
+    <Body>
+      <About />
+    </Body>
   )
 }
 

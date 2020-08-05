@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Flex, Box } from 'rebass';
 import { media } from '../../../utils/mediaQueries'
 import { isMobile } from '../../../utils/common';
-
+import Text from '../../atoms/Text';
+import Icon from '../../atoms/Icon';
+import { alignLeft , alignRight} from '../../../assets/icons';
+import SideBar from '../../molecules/SideBar';
 
 const fromTop = keyframes`
     0% {top: -100px;}
@@ -36,20 +39,26 @@ const Title = styled.p`
 
 `
 
-const Navbar = () => {
+const Navbar = ({}) => {
+
+  const [sideBar, toggleSideBar] = useState(false)
+  const Title = () => {
+    return '<Srikanth Margam/>'
+  }
   return (
-    isMobile() ?
-      <ExtendedFlex>
-        <Title>Srikanth Margam</Title>
-      </ExtendedFlex>
-    :
-    <Flex flexDirection='row'>
-      <Flex width={'25%'}></Flex>
-      <ExtendedFlex  width={'50%'} flexDirection='row' justifyContent='center'>
-        <Title>Srikanth Margam</Title>
-      </ExtendedFlex>
-      <Flex width={'25%'}></Flex> 
-    </Flex>
+    <>
+      <Flex width='100%'>
+        <Flex width={['80%','30%', '20%']}>
+          <SideBar open={sideBar} toggleSideBar={() => toggleSideBar(false)} />
+          { !sideBar && <Icon  ml='24px' mt='30px' src={alignLeft} size='md' pointer onClick={() => toggleSideBar(!sideBar)} />}
+        </Flex>
+        <Flex justifyContent='center' width='80%'>
+          <Text color='white' letterSpacing='1px' fontSize='xl' bolder>{Title()}</Text>
+        </Flex>
+        <Flex width='20%'>
+        </Flex>
+      </Flex>
+    </>
   )
 }
 
