@@ -8,7 +8,8 @@ import Text from '../atoms/Text';
 const FlexBody = styled(Flex)`
   background-color: white;
   transition: all 0.5s ease-out;
-
+  position: absolute;
+  z-index:1;
 `
 const ExtendedText = styled(Text)`
   margin-left: 12px;
@@ -21,7 +22,7 @@ const ExtendedText = styled(Text)`
 `
 const SideBar = ({open, toggleSideBar}) => {
  return (
-  <FlexBody flexDirection='column' width={!open ? '0vw' : '50vw' } height='100vh'>
+  <FlexBody flexDirection='column' width={!open ? '0vw' : ['50vw', '15vw'] } height='100vh'>
     { open &&   
       <Flex flexDirection='column' px='24px' >
         <Flex flexDirection='row' justifyContent='flex-end'>

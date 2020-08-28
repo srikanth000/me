@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styled, {keyframes} from 'styled-components';
 import { Flex, Box } from 'rebass';
 import About from '../About';
-
+import SideBar from '../../molecules/SideBar';
 
 
 const fromLeft = keyframes`
@@ -24,7 +24,7 @@ const Body = styled(Box)`
   -webkit-animation-direction: alternate; 
 `
 
-const Container = () => {
+const Container = ({sideBar, toggleSideBar}) => {
 
   return (
     <Body>

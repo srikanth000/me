@@ -6,7 +6,6 @@ import { isMobile } from '../../../utils/common';
 import Text from '../../atoms/Text';
 import Icon from '../../atoms/Icon';
 import { alignLeft , alignRight} from '../../../assets/icons';
-import SideBar from '../../molecules/SideBar';
 
 const fromTop = keyframes`
     0% {top: -100px;}
@@ -39,9 +38,8 @@ const Title = styled.p`
 
 `
 
-const Navbar = ({}) => {
+const Navbar = ({sideBar, toggleSideBar}) => {
 
-  const [sideBar, toggleSideBar] = useState(false)
   const Title = () => {
     return '<Srikanth Margam/>'
   }
@@ -49,7 +47,6 @@ const Navbar = ({}) => {
     <>
       <Flex width='100%'>
         <Flex width={['80%','30%', '20%']}>
-          <SideBar open={sideBar} toggleSideBar={() => toggleSideBar(false)} />
           { !sideBar && <Icon  ml='24px' mt='30px' src={alignLeft} size='md' pointer onClick={() => toggleSideBar(!sideBar)} />}
         </Flex>
         <Flex justifyContent='center' width='80%'>
