@@ -46,7 +46,7 @@ const Navbar = ({sideBar, toggleSideBar}) => {
   return (
     <>
       <Flex width='100%'>
-        <Flex width={['80%','30%', '20%']}>
+        <Flex width={['20%','30%', '20%']}>
           { !sideBar && <Icon  ml='24px' mt='30px' src={alignLeft} size='md' pointer onClick={() => toggleSideBar(!sideBar)} />}
         </Flex>
         <Flex justifyContent='center' width='80%'>
