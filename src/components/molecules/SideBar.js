@@ -7,7 +7,7 @@ import Text from '../atoms/Text';
 
 const FlexBody = styled(Flex)`
   background-color: white;
-  transition: all 0.5s ease-out;
+  transition: all 0.2s ease-out;
   position: absolute;
   z-index:1;
 `
