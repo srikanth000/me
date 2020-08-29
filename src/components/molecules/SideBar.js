@@ -9,10 +9,12 @@ const FlexBody = styled(Flex)`
   background-color: white;
   transition: all 0.2s ease-out;
   position: absolute;
-  z-index:1;
+  z-index:2;
+  top: 0
 `
 const ExtendedText = styled(Text)`
   margin-left: 12px;
+  margin-top: 34px;
   cursor: pointer;
   :hover {
     color: #0A3D62;
@@ -20,7 +22,7 @@ const ExtendedText = styled(Text)`
     transform: scale(1.2);
   }
 `
-const SideBar = ({open, toggleSideBar}) => {
+const SideBar = ({open, pages, updatePages, toggleSideBar}) => {
  return (
   <FlexBody flexDirection='column' width={!open ? '0vw' : ['50vw', '15vw'] } height='100vh'>
     { open &&   
@@ -30,20 +32,20 @@ const SideBar = ({open, toggleSideBar}) => {
           <Flex pt='18px'><Icon src={alignRight} size='md' pointer onClick={toggleSideBar} /></Flex>
         </Flex>
         <Flex mt={'24px'} flexDirection='column'>
-          <Flex mb={'-16px'} flexDirection='row'>
-            <Flex justifyContent='flex-start' mt='18px' mr='8px' ><Icon src={user} size='md' pointer onClick={toggleSideBar} /></Flex>
+          <Flex mb={'-16px'} onClick={() => updatePages('about') } flexDirection='row'>
+            <Flex justifyContent='flex-start' mt='32px' mr='8px' ><Icon src={user} size='md' pointer onClick={toggleSideBar} /></Flex>
             <ExtendedText color='black' pt={3} bold > About </ExtendedText>
           </Flex>
-          <Flex mb={'-16px'}  flexDirection='row'>
-            <Flex justifyContent='flex-start' mt='18px' mr='8px' ><Icon src={workingExp} size='md' pointer onClick={toggleSideBar} /></Flex>
+          <Flex mb={'-16px'} onClick={() => updatePages('exp') }  flexDirection='row'>
+            <Flex justifyContent='flex-start' mt='32px' mr='8px' ><Icon src={workingExp} size='md' pointer onClick={toggleSideBar} /></Flex>
             <ExtendedText color='black'  pt={3} bold > Experience </ExtendedText>
           </Flex>
-          <Flex mb={'-16px'} flexDirection='row'>
-            <Flex justifyContent='flex-start' mt='18px' mr='8px' ><Icon src={profile} size='md' pointer onClick={toggleSideBar} /></Flex>
+          <Flex mb={'-16px'} onClick={() => updatePages('projects') } flexDirection='row'>
+            <Flex justifyContent='flex-start' mt='32px' mr='8px' ><Icon src={profile} size='md' pointer onClick={toggleSideBar} /></Flex>
             <ExtendedText color='black'  pt={3} bold > Projects </ExtendedText>
           </Flex>
-          <Flex mb={'-16px'} flexDirection='row'>
-            <Flex justifyContent='flex-start' mt='18px' mr='8px' ><Icon src={message} size='md' pointer onClick={toggleSideBar} /></Flex>
+          <Flex mb={'-16px'} onClick={() => updatePages('contact') } flexDirection='row'>
+            <Flex justifyContent='flex-start' mt='32px' mr='8px' ><Icon src={message} size='md' pointer onClick={toggleSideBar} /></Flex>
             <ExtendedText color='black'  pt={3} bold > Contact</ExtendedText>
           </Flex>
         </Flex>

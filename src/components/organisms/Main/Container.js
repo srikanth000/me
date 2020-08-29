@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import styled, {keyframes} from 'styled-components';
 import { Flex, Box } from 'rebass';
 import About from '../About';
+import Experience from './../Experience';
+
 import SideBar from '../../molecules/SideBar';
 
 
@@ -24,11 +26,13 @@ const Body = styled(Box)`
   -webkit-animation-direction: alternate; 
 `
 
-const Container = ({sideBar, toggleSideBar}) => {
+const Container = ({sideBar, pages, toggleSideBar}) => {
 
   return (
     <Body>
-      <About />
+      {pages.about && <About />}
+      {pages.exp && <Experience />}
+
     </Body>
   )
 }
