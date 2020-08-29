@@ -53,7 +53,7 @@ const Navbar = ({sideBar, toggleSideBar, topBanner}) => {
         <Flex mb={'16px'} ml={['16%', 0]} justifyContent='center' width={['100%','80%']}>
           <Text color='white' letterSpacing='1px'   mt={'28px'}  fontSize='xl' bolder>{Title()}</Text>
         </Flex>
-        <Flex  justifyContent='flex-end' width='20%'>
+        <Flex  justifyContent='flex-end' width={['25%','20%']}>
           <Flex flexDirection='row' mr={'24px'}>
             <Icon  ml='24px' pointer onClick={downloadResume} mt='28px' src={resume} size='xl' />
           </Flex>
