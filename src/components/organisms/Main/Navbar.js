@@ -41,7 +41,7 @@ const Navbar = ({sideBar, toggleSideBar, topBanner}) => {
   }
 
   const downloadResume = () => {
-    window.open('https://drive.google.com/file/d/1iby2DafIdzUIAwGgdOhFJSjnAj-QUOPR/view?usp=sharing')
+    window.open('https://drive.google.com/file/d/1HLZ73_fw5XIVGkqRjbfzW5BPXzp_5Nhj/view')
   }
 
   return (
