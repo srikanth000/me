@@ -30,7 +30,7 @@ const ExtendedImage = styled(Image)`
 const About = () => {
 
   const goToResume = () => {
-    window.open('https://drive.google.com/file/d/1iby2DafIdzUIAwGgdOhFJSjnAj-QUOPR/view?usp=sharing')
+    window.open('https://drive.google.com/file/d/1HLZ73_fw5XIVGkqRjbfzW5BPXzp_5Nhj/view')
   }
 
   const list = ['Building User Interface', 'Progressive Web Apps', 'Playing with ServiceWorkers', 'Writing automated scripts with Python, Ruby',
