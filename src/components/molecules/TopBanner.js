@@ -32,7 +32,8 @@ const Resume = styled(Text)`
 const TopBanner = ({updateBannner}) => {
 
   const downlodResume = () => {
-    window.open('https://drive.google.com/file/d/1iby2DafIdzUIAwGgdOhFJSjnAj-QUOPR/view?usp=sharing')
+    window.open('https://drive.google.com/file/d/1HLZ73_fw5XIVGkqRjbfzW5BPXzp_5Nhj/view')
+
   }
   return (
     <ExtendedFlex alignItems='center' justifyContent='space-around' width='100%' px={'24px'} py={'8px'}>
